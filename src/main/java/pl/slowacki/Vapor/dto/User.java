@@ -8,10 +8,10 @@ public class User {
 
     private String name;
     private Game[] library;
-    private Date dateOfRegistration;
+    private String dateOfRegistration;
     private double balance;
 
-    public User(String name, Game[] library, Date dateOfRegistration, double balance) {
+    public User(String name, Game[] library, String dateOfRegistration, double balance) {
         this.name = name;
         this.library = library;
         this.dateOfRegistration = dateOfRegistration;
@@ -37,11 +37,11 @@ public class User {
         this.library = library;
     }
 
-    public Date getDateOfRegistration() {
+    public String getDateOfRegistration() {
         return dateOfRegistration;
     }
 
-    public void setDateOfRegistration(Date dateOfRegistration) {
+    public void setDateOfRegistration(String dateOfRegistration) {
         this.dateOfRegistration = dateOfRegistration;
     }
 

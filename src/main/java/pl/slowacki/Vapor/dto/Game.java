@@ -12,12 +12,12 @@ public class Game {
     private String publisher;
     private String[] tags;
     private Review[] reviews;
-    private Date dateOfPublication;
+    private String dateOfPublication;
     private double price;
     private double rating;
     private String systemRequirements;
 
-    public Game(String name, String description, String developer, String publisher, String[] tags, Review[] reviews, Date dateOfPublication, double price, double rating, String systemRequirements) {
+    public Game(String name, String description, String developer, String publisher, String[] tags, Review[] reviews, String dateOfPublication, double price, double rating, String systemRequirements) {
         this.name = name;
         this.description = description;
         this.developer = developer;
@@ -65,11 +65,11 @@ public class Game {
         this.publisher = publisher;
     }
 
-    public String[] getTag() {
+    public String[] getTags() {
         return tags;
     }
 
-    public void setTag(String[] tags) {
+    public void setTags(String[] tags) {
         this.tags = tags;
     }
 
@@ -81,11 +81,11 @@ public class Game {
         this.reviews = reviews;
     }
 
-    public Date getDateOfPublication() {
+    public String getDateOfPublication() {
         return dateOfPublication;
     }
 
-    public void setDateOfPublication(Date dateOfPublication) {
+    public void setDateOfPublication(String dateOfPublication) {
         this.dateOfPublication = dateOfPublication;
     }
 
