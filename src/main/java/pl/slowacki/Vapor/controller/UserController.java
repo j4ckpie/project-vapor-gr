@@ -13,8 +13,13 @@ public class UserController {
 
     @PostMapping("/users/add")
     public String addUser(@RequestBody User user) {
-        users.put(user.getName(), user);
-        return "Added user " + user.getName();
+        if (users.containsKey(user.getName())) {
+            return "User " + user.getName() + " is already added.";
+        }
+        else {
+            users.put(user.getName(), user);
+            return "Added user " + user.getName();
+        }
     }
 
     @GetMapping("/users")
@@ -24,8 +29,13 @@ public class UserController {
 
     @DeleteMapping("/users/delete")
     public String deleteUser(@RequestParam String name) {
-        users.remove(name);
-        return "Removed user " + name;
+        if (users.containsKey(name)) {
+            users.remove(name);
+            return "Removed user " + name;
+        }
+        else {
+            return "There is no such user as " + name + "!";
+        }
     }
 
 }
