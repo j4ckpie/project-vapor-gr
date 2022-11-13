@@ -13,11 +13,11 @@ public class GameController {
     @PostMapping("/games/add")
     public String addGame (@RequestBody Game game){
         if (games.containsKey(game.getName())) {
-            return "User " + game.getName() + " is already added.";
+            return "Game " + game.getName() + " is already added.";
         }
         else {
             games.put(game.getName(), game);
-            return "Added user " + game.getName();
+            return "Added game " + game.getName();
         }
     }
 
@@ -30,10 +30,10 @@ public class GameController {
     public String deleteGame(@PathVariable String name){
         if (games.containsKey(name)) {
             games.remove(name);
-            return "Removed user " + name;
+            return "Removed game " + name;
         }
         else {
-            return "There is no such user as " + name + "!";
+            return "There is no such game as " + name + "!";
         }
     }
 }

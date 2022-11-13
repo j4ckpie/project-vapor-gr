@@ -27,8 +27,8 @@ public class UserController {
         return users;
     }
 
-    @DeleteMapping("/users/delete")
-    public String deleteUser(@RequestParam String name) {
+    @DeleteMapping("/users/{name}")
+    public String deleteUser(@PathVariable String name) {
         if (users.containsKey(name)) {
             users.remove(name);
             return "Removed user " + name;
