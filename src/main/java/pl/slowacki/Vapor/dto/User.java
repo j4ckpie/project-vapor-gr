@@ -1,17 +1,18 @@
 package pl.slowacki.Vapor.dto;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Objects;
 
 public class User {
-
+    private SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
     private String name;
     private Game[] library;
-    private String dateOfRegistration;
+    private Date dateOfRegistration = new Date();
     private double balance;
 
-    public User(String name, Game[] library, String dateOfRegistration, double balance) {
+    public User(String name, Game[] library, Date dateOfRegistration, double balance) {
         this.name = name;
         this.library = library;
         this.dateOfRegistration = dateOfRegistration;
@@ -38,10 +39,10 @@ public class User {
     }
 
     public String getDateOfRegistration() {
-        return dateOfRegistration;
+        return formatter.format(dateOfRegistration);
     }
 
-    public void setDateOfRegistration(String dateOfRegistration) {
+    public void setDateOfRegistration(Date dateOfRegistration) {
         this.dateOfRegistration = dateOfRegistration;
     }
 
